@@ -8,8 +8,11 @@ jobs:
   telegram-notification:
     runs-on: ubuntu-latest
     steps:
-      - name: "test"
-        run: test.sh
+        - name: Checkout code
+          uses: actions/checkout@v2
+  
+        - name: Run Bash script
+          run: bash test.sh
       # - uses: actions/checkout@v3
 
       # - name: Install curl
