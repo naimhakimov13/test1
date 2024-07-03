@@ -20,5 +20,5 @@ jobs:
           PULL_REQUEST_TITLE: ${{ github.event.pull_request.title }}
           PULL_REQUEST_URL: ${{ github.event.pull_request.url }}
         run: |
-          curl -X POST      -H 'Content-Type: application/json'      -d '{"chat_id": ${{ TELEGRAM_CHAT_ID }} , "text": "This is a test from curl", "disablation": true}'      https://api.telegram.org/bot${{TELEGRAM_BOT_TOKEN}}/sendMessage
+          curl -X POST      -H 'Content-Type: application/json'      -d '{"chat_id": ${{ secrets.TELEGRAM_CHAT_ID }} , "text": "This is a test from curl", "disablation": true}'      https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage
 
