@@ -20,7 +20,5 @@ jobs:
           PULL_REQUEST_TITLE: ${{ github.event.pull_request.title }}
           PULL_REQUEST_URL: ${{ github.event.pull_request.url }}
         run: |
-          curl -X POST https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage \
-            -d chat_id=$TELEGRAM_CHAT_ID \
-            -d text="New pull request created: *$PULL_REQUEST_TITLE* ($PULL_REQUEST_URL)" \
+          curl -X POST https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?chat_id=$TELEGRAM_CHAT_ID&text="New pull request created: *$PULL_REQUEST_TITLE* ($PULL_REQUEST_URL)"
             -H "Content-Type: application/json"
